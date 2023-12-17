@@ -1,38 +1,266 @@
-.App {
+.user-logo {
+  width: 30px; /* Set your desired width here */
+  height: auto; /* To maintain the aspect ratio */
+}
+.main-logo {
+  width: 130px; /* Set your desired width here */
+  height: auto; /* To maintain the aspect ratio */
+}
+.project-head {
+  font-family: 'Times New Roman', Times, serif;
+  color: #229c41;
+}
+.project-display {
+  color: blue;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.button {
+  background: #31e679;
+  border: none;
+  padding: 10px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  width: 120px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: skew(0deg);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(20, 20, 20);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.pro-nav-button {
+  display: flex; /* Use flexbox to center items horizontally and vertically */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+/* Search.css */
+.Search-head {
+  display: flex;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: #229c41;
+
+}
+.input {
+  
+  border: 2px solid transparent;
+  width: 15em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid #229c41;
+  box-shadow: 0px 0px 0px 7px rgba(87, 207, 87, 0.2);
+  background-color: white;
+}
+
+.search-div {
+  display: flex;
+  flex-direction: column; /* Stack the input and select vertically */
+  align-items: center;
+}
+.ProjectCount {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space items evenly across the container */
+  align-items: center; /* Center items vertically in the container */
+}
+.item-on-right {
+  /* Add styles for your item on the right, e.g., it could be a button or a div */
+  margin-left: auto; /* Push the item to the right by moving it to the end */
+}
+
+.projectdetail{
+  display: flex;
+  flex-direction: column; /* Stack the input and select vertically */
+  align-items: flex-start; 
+}
+.projectdetail > * {
+  margin-left: 20px; /* Adjust the amount of space as needed */
+}
+.Update-Details{
+  text-align: right;
+}
+.btn {
+  --color: #229c41;
+  --color2: rgb(10, 25, 30);
+  padding: 0.8em 1.75em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: .3px solid var(--color);
+  transition: .5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 17px;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+ }
+ 
+ .btn::after, .btn::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: .5s ease-out;
+  background-color: var(--color);
+ }
+ 
+ .btn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+ }
+ 
+ .btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+ }
+ 
+ .btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+ }
+ 
+ .btn:hover {
+  color: var(--color2);
+ }
+ 
+ .btn:active {
+  filter: brightness(.7);
+  transform: scale(.98);
+ }
+
+ small{
+   color: red;
+ }
+
+ .ProImg {
+  width: 25vw;
+  height: 35vh;
+  object-fit: cover;
+  border-style: solid;
+  transition: width 0.3s, height 0.3s; /* Add transition property for smooth effect */
+}
+
+.ProImg:hover {
+  width: 40vw;
+  height: 50vh;
+}
+
+.fileclass{
+  display: inline-flex;
+}
+.dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone.dragging {
+  border-color: #2196F3; /* Change border color on drag */
+}
+
+.dropzone p {
+  margin: 0;
+}
+
+.dropzone img {
+  max-width: 100%;
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+.Imagedrop{
+  position: relative;
+  min-height: 50px;
+  display: inline-flex;
+  max-width: 20vw;
+}
+.Imagedrop:hover{
+  border: 2px dashed #cb3737;
+}
+
+.imageView {
+  background: linear-gradient(16deg, rgba(255,0,239,1) 7%, rgba(113,0,226,1) 49%, rgba(60,0,255,1) 100%);
+}
+.videoView{
+
+  background:linear-gradient(69.83deg, #00c48c 0%, #0084f4 100%);
+}
+.fileView{
+  background:linear-gradient(81.67deg, #ff647c 0%, #1f5dc5 100%);
+}
+.imageView > * {
+  
+  padding-left: 20px; 
+}
+
+.videoView > * {
+ 
+  padding-left: 20px; 
+}
+
+.fileView > * {
+
+  padding-left: 20px; 
+}
+
+.carImage{
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover;
+  margin: 0;   /* Add this line to remove margin */
+  padding: 0;  /* Add this line to remove padding */
+}
+.loginTitle{
+  display: block;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loginTitle  h1{
+  color: #00c48c;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loginTitle  h4{
+  color:#cb3737;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loginBody{
+  background-color: rgb(255, 242, 127);
+  
 }
